@@ -28,48 +28,45 @@ class CustomCrop extends Component {
             topLeft: new Animated.ValueXY(
                 props.rectangleCoordinates
                     ? this.imageCoordinatesToViewCoordinates(
-                          props.rectangleCoordinates.topLeft,
-                          true,
-                      )
+                        props.rectangleCoordinates.topLeft,
+                        true,
+                    )
                     : { x: 100, y: 100 },
             ),
             topRight: new Animated.ValueXY(
                 props.rectangleCoordinates
                     ? this.imageCoordinatesToViewCoordinates(
-                          props.rectangleCoordinates.topRight,
-                          true,
-                      )
+                        props.rectangleCoordinates.topRight,
+                        true,
+                    )
                     : { x: Dimensions.get('window').width - 100, y: 100 },
             ),
             bottomLeft: new Animated.ValueXY(
                 props.rectangleCoordinates
                     ? this.imageCoordinatesToViewCoordinates(
-                          props.rectangleCoordinates.bottomLeft,
-                          true,
-                      )
+                        props.rectangleCoordinates.bottomLeft,
+                        true,
+                    )
                     : { x: 100, y: this.state.viewHeight - 100 },
             ),
             bottomRight: new Animated.ValueXY(
                 props.rectangleCoordinates
                     ? this.imageCoordinatesToViewCoordinates(
-                          props.rectangleCoordinates.bottomRight,
-                          true,
-                      )
+                        props.rectangleCoordinates.bottomRight,
+                        true,
+                    )
                     : {
-                          x: Dimensions.get('window').width - 100,
-                          y: this.state.viewHeight - 100,
-                      },
+                        x: Dimensions.get('window').width - 100,
+                        y: this.state.viewHeight - 100,
+                    },
             ),
         };
         this.state = {
             ...this.state,
-            overlayPositions: `${this.state.topLeft.x._value},${
-                this.state.topLeft.y._value
-            } ${this.state.topRight.x._value},${this.state.topRight.y._value} ${
-                this.state.bottomRight.x._value
-            },${this.state.bottomRight.y._value} ${
-                this.state.bottomLeft.x._value
-            },${this.state.bottomLeft.y._value}`,
+            overlayPositions: `${this.state.topLeft.x._value},${this.state.topLeft.y._value
+                } ${this.state.topRight.x._value},${this.state.topRight.y._value} ${this.state.bottomRight.x._value
+                },${this.state.bottomRight.y._value} ${this.state.bottomLeft.x._value
+                },${this.state.bottomLeft.y._value}`,
         };
 
         this.panResponderTopLeft = this.createPanResponser(this.state.topLeft);
@@ -129,13 +126,10 @@ class CustomCrop extends Component {
 
     updateOverlayString() {
         this.setState({
-            overlayPositions: `${this.state.topLeft.x._value},${
-                this.state.topLeft.y._value
-            } ${this.state.topRight.x._value},${this.state.topRight.y._value} ${
-                this.state.bottomRight.x._value
-            },${this.state.bottomRight.y._value} ${
-                this.state.bottomLeft.x._value
-            },${this.state.bottomLeft.y._value}`,
+            overlayPositions: `${this.state.topLeft.x._value},${this.state.topLeft.y._value
+                } ${this.state.topRight.x._value},${this.state.topRight.y._value} ${this.state.bottomRight.x._value
+                },${this.state.bottomRight.y._value} ${this.state.bottomLeft.x._value
+                },${this.state.bottomLeft.y._value}`,
         });
     }
 
@@ -167,7 +161,7 @@ class CustomCrop extends Component {
                 <View
                     style={[
                         s(this.props).cropContainer,
-                        { height: this.state.viewHeight },
+                        { height: '100%', justifyContent: 'center', backgroundColor: 'black' },
                     ]}
                 >
                     <Image
